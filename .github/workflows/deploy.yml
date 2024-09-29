@@ -23,4 +23,5 @@ jobs:
           # private ssh key registered on the server
           private_key: ${{ secrets.OCI_VM_PRIVATE_KEY }}
           # command to be executed
-          command: echo 'Host World'         
+          command: |
+            git clone "https://{TinyAbra}:{OCI_PASSWORD}@github.com/TinyAbra/ttrpg-website-deploy.git"
