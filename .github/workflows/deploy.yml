@@ -24,9 +24,8 @@ jobs:
           private_key: ${{ secrets.OCI_VM_PRIVATE_KEY }}
           # command to be executed
           command: |
-            rm -r /home/ubuntu/repo |
-            mkdir /home/ubuntu/repo |
+            rm -r /home/ubuntu/ttrpg-website-deploy |
             git clone https://github.com/TinyAbra/ttrpg-website-deploy.git |
-            cd /home/ubuntu/repo |
+            cd /home/ubuntu/ttrpg-website-deploy |
             npm install |
             npm run build
