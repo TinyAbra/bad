@@ -20,5 +20,5 @@ jobs:
         uses: pkg-src/github-action-git-bash@v1.1
         with:
           command: |
-            ssh -i {OCI_CLI_KEY_CONTENT} ubuntu@129.80.28.128 "git clone https://github.com/TinyAbra/ttrpg-website-deploy.git"
+            ssh -i {OCI_CLI_KEY_CONTENT} ubuntu@129.80.28.128 "git clone https://{OCI_CLI_USER}:{OCI_PASSWORD}@github.com/TinyAbra/ttrpg-website-deploy.git"
           
