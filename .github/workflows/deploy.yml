@@ -25,7 +25,7 @@ jobs:
           # command to be executed
           command: |
             cd /home/ubuntu/main |
-            git pull https://github.com/TinyAbra/ttrpg-website-deploy.git main |
+            git pull |
             cd /home/ubuntu/main/quartz |
             npm i |
             npx quartz build --serve
