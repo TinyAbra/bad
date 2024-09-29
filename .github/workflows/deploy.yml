@@ -18,9 +18,9 @@ jobs:
         uses: D3rHase/ssh-command-action@latest
         with:
           # hostname / IP of the server
-          host: ${{ OCI_VM_HOST }}
-          user: ${{ OCI_CLI_USER }}
+          host: ${{ secrets.OCI_VM_HOST }}
+          user: ${{ secrets.OCI_CLI_USER }}
           # private ssh key registered on the server
-          private_key: ${{ OCI_KEY_CONTENT }}
+          private_key: ${{ secrets.OCI_KEY_CONTENT }}
           # command to be executed
           command: echo 'Host World'         
