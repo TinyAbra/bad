@@ -1,0 +1,25 @@
+name: Deploy to OCI
+
+on:
+  push:
+    branches:
+    - 'main'
+
+jobs:
+  my-instances:
+    runs-on: ubuntu-latest
+    name: Deploy Repo
+    env:
+      OCI_CLI_USER: ${{ secrets.OCI_CLI_USER }}
+      OCI_CLI_TENANCY: ${{ secrets.OCI_CLI_TENANCY }}
+      OCI_CLI_FINGERPRINT: ${{ secrets.OCI_CLI_FINGERPRINT }}
+      OCI_CLI_KEY_CONTENT: ${{ secrets.OCI_CLI_KEY_CONTENT }}
+      OCI_CLI_REGION: ${{ secrets.OCI_CLI_REGION }}
+    steps:
+      - name: Log into OCIR
+        uses: pkg-src/github-action-git-bash@v1.1
+        id: login-ocir
+        with:
+          command: |
+            ssh -i {OCI_CLI_KEY_CONTENT} ubuntu@129.80.28.128
+          
