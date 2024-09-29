@@ -24,8 +24,8 @@ jobs:
           private_key: ${{ secrets.OCI_VM_PRIVATE_KEY }}
           # command to be executed
           command: |
-            cd /home/ubuntu/main |
+            cd ttrpg-website-deploy/
             git pull |
-            cd /home/ubuntu/main/quartz |
+            cd ttrpg-website-deploy/quartz |
             npm i |
             npx quartz build --serve
