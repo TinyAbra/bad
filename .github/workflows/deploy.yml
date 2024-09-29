@@ -19,7 +19,7 @@ jobs:
         with:
           # hostname / IP of the server
           host: ${{ secrets.OCI_VM_HOST }}
-          user: tinyabra26
+          user: ubuntu
           # private ssh key registered on the server
           private_key: ${{ secrets.OCI_VM_PRIVATE_KEY }}
           # command to be executed
