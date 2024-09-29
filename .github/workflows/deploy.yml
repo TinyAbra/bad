@@ -16,7 +16,7 @@ jobs:
       OCI_CLI_KEY_CONTENT: ${{ secrets.OCI_CLI_KEY_CONTENT }}
       OCI_CLI_REGION: ${{ secrets.OCI_CLI_REGION }}
     steps:
-      - name: Log into OCIR
+      - name: SSH to VM
         uses: pkg-src/github-action-git-bash@v1.1
         with:
           command: |
