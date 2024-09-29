@@ -11,20 +11,16 @@ jobs:
     name: Deploy Repo
     env:
       OCI_CLI_USER: ${{ secrets.OCI_CLI_USER }}
-      OCI_PASSWORD: ${{ secrets.OCI_PASSWORD }}
-      OCI_CLI_TENANCY: ${{ secrets.OCI_CLI_TENANCY }}
-      OCI_CLI_FINGERPRINT: ${{ secrets.OCI_CLI_FINGERPRINT }}
       OCI_CLI_KEY_CONTENT: ${{ secrets.OCI_CLI_KEY_CONTENT }}
-      OCI_CLI_REGION: ${{ secrets.OCI_CLI_REGION }}
       OCI_VM_HOST: ${{ secrets.OCI_VM_HOST }}
     steps:
       - name: SSH Command
         uses: D3rHase/ssh-command-action@latest
         with:
           # hostname / IP of the server
-          host: OCI_VM_HOST
-          user: OCI_CLI_USER
+          host: ${{ OCI_VM_HOST }}
+          user: ${{ OCI_CLI_USER }}
           # private ssh key registered on the server
-          private_key: OCI_KEY_CONTENT
+          private_key: ${{ OCI_KEY_CONTENT }}
           # command to be executed
           command: echo 'Host World'         
