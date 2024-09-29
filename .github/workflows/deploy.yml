@@ -16,7 +16,7 @@ jobs:
       OCI_CLI_FINGERPRINT: ${{ secrets.OCI_CLI_FINGERPRINT }}
       OCI_CLI_KEY_CONTENT: ${{ secrets.OCI_CLI_KEY_CONTENT }}
       OCI_CLI_REGION: ${{ secrets.OCI_CLI_REGION }}
-      OCI_CLI_HOST: ${{ secrets.OCI_VM_HOST }}
+      OCI_VM_HOST: ${{ secrets.OCI_VM_HOST }}
     steps:
       - name: SSH Command
         uses: D3rHase/ssh-command-action@latest
