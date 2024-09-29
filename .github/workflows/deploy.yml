@@ -24,10 +24,7 @@ jobs:
           private_key: ${{ secrets.OCI_VM_PRIVATE_KEY }}
           # command to be executed
           command: |
-            npm -v |
-            node -v |
-            rm -r /home/ubuntu/ttrpg-website-deploy |
-            git clone https://github.com/TinyAbra/ttrpg-website-deploy.git |
+            git pull https://github.com/TinyAbra/ttrpg-website-deploy.git main |
             cd /home/ubuntu/ttrpg-website-deploy/quartz |
             npm install |
             npm run build
