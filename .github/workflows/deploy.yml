@@ -24,6 +24,7 @@ jobs:
           private_key: ${{ secrets.OCI_VM_PRIVATE_KEY }}
           # command to be executed
           command: |
+            cd /home/ubuntu/main |
             git pull https://github.com/TinyAbra/ttrpg-website-deploy.git main |
             cd /home/ubuntu/main/quartz |
             npm i |
