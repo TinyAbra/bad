@@ -26,5 +26,5 @@ jobs:
           command: |
             git pull https://github.com/TinyAbra/ttrpg-website-deploy.git main |
             cd /home/ubuntu/ttrpg-website-deploy/quartz |
-            npm install |
-            npm run build
+            npm i |
+            npx quartz build --serve
