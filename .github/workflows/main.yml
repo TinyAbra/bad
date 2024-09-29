@@ -1,3 +1,10 @@
+name: OCI info
+
+on:
+  push:
+    branches:
+    - 'main'
+
 jobs:
   my-instances:
     runs-on: ubuntu-latest
