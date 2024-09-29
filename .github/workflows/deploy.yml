@@ -25,4 +25,6 @@ jobs:
           # command to be executed
           command: |
             pwd
-            git clone "https://{TinyAbra}:{OCI_PASSWORD}@github.com/TinyAbra/ttrpg-website-deploy.git"
+            git clone "https://{TinyAbra}:{OCI_PASSWORD}@github.com/TinyAbra/ttrpg-website-deploy.git" /home/ubuntu/repo/
+            npm install
+            npm run build
