@@ -25,6 +25,7 @@ jobs:
           # command to be executed
           command: |
             cd ttrpg-website-deploy |
+            pwd |
             git pull |
             cd ttrpg-website-deploy/quartz |
             npm i |
