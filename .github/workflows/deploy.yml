@@ -24,7 +24,7 @@ jobs:
           private_key: ${{ secrets.OCI_VM_PRIVATE_KEY }}
           # command to be executed
           command: |
-            cd ttrpg-website-deploy/ |
+            cd ttrpg-website-deploy |
             git pull |
             cd ttrpg-website-deploy/quartz |
             npm i |
