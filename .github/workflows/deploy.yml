@@ -16,10 +16,15 @@ jobs:
       OCI_CLI_FINGERPRINT: ${{ secrets.OCI_CLI_FINGERPRINT }}
       OCI_CLI_KEY_CONTENT: ${{ secrets.OCI_CLI_KEY_CONTENT }}
       OCI_CLI_REGION: ${{ secrets.OCI_CLI_REGION }}
+      OCI_CLI_HOST: ${{ secrets.OCI_VM_HOST }}
     steps:
-      - name: SSH to VM
-        uses: pkg-src/github-action-git-bash@v1.1
+      - name: SSH Command
+        uses: D3rHase/ssh-command-action@latest
         with:
-          command: |
-            ssh -i {OCI_CLI_KEY_CONTENT} ubuntu@129.80.28.128 "git clone https://{OCI_CLI_USER}:{OCI_PASSWORD}@github.com/TinyAbra/ttrpg-website-deploy.git /home/ubuntu/repo/"
-          
+          # hostname / IP of the server
+          host: OCI_VM_HOST
+          user: OCI_CLI_USER
+          # private ssh key registered on the server
+          private_key: OCI_KEY_CONTENT
+          # command to be executed
+          command: echo 'Host World'         
